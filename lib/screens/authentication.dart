@@ -1,5 +1,7 @@
+import 'package:chat_app/screens/home.dart';
 import 'package:chat_app/widgets/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:nb_utils/nb_utils.dart';
 
 class AuthenticationScreen extends StatelessWidget {
   @override
@@ -25,32 +27,37 @@ class AuthenticationScreen extends StatelessWidget {
           ),
           CustomText(text: "Select authentication method", color: Colors.white,),
           SizedBox(height: 20,),
-          Container(
-            width: 300,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(.3),
-                  offset: Offset(2, 3),
-                  blurRadius: 7
-                )
-              ]
+          GestureDetector(
+            onTap: (){
+              HomeScreen().launch(context);
+            },
+            child: Container(
+              width: 300,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(.3),
+                    offset: Offset(2, 3),
+                    blurRadius: 7
+                  )
+                ]
 
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Row(
-                  children: [
-                    SizedBox(
-                    width: 50
-                    ,child: Image.asset("assets/images/google.png")),
-                    CustomText(text: "Use Google")
-                  ],
-                ),
-              ],
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      SizedBox(
+                      width: 50
+                      ,child: Image.asset("assets/images/google.png")),
+                      CustomText(text: "Use Google")
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
       ],
