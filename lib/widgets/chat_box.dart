@@ -1,5 +1,3 @@
-import 'package:bubble/bubble.dart';
-import 'package:chat_app/widgets/custom_text.dart';
 import 'package:chat_app/widgets/users_card.dart';
 import 'package:flutter/material.dart';
 
