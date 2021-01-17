@@ -11,17 +11,19 @@ import 'helper/constants.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initialization;
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider.value(value: AppProvider()),
-    ChangeNotifierProvider.value(value: AuthProvider.init()),
-  ], child: MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: 'Chat room',
-    theme: ThemeData(
-      primarySwatch: Colors.blue,
-    ),
-    home: AppScreensController(),
-  )));
+  runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: AppProvider()),
+        ChangeNotifierProvider.value(value: AuthProvider.init()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Chat room',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: AppScreensController(),
+      )));
 }
 
 class AppScreensController extends StatelessWidget {
