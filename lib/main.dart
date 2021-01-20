@@ -1,5 +1,6 @@
 import 'package:chat_app/providers/app.dart';
 import 'package:chat_app/providers/auth.dart';
+import 'package:chat_app/providers/user.dart';
 import 'package:chat_app/screens/authentication.dart';
 import 'package:chat_app/screens/home.dart';
 import 'package:chat_app/widgets/loading.dart';
@@ -15,6 +16,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider.value(value: AppProvider()),
         ChangeNotifierProvider.value(value: AuthProvider.init()),
+        ChangeNotifierProvider.value(value: UserProvider.init()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

@@ -13,7 +13,7 @@ class UserServices {
     firebaseFirestore
         .collection(collection)
         .doc(id)
-        .set({"name": name, "id": id, "photo": photo, "online": true});
+        .set({"name": name, "id": id, "photo": photo});
   }
 
   Future<UserModel> getUserById(String id) =>

@@ -1,5 +1,7 @@
+import 'package:chat_app/providers/auth.dart';
 import 'package:chat_app/widgets/users_card.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'custom_chat_buble.dart';
 import 'footer.dart';
@@ -7,6 +9,7 @@ import 'footer.dart';
 class ChatBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
     return Column(
       children: [
         Row(
@@ -15,7 +18,7 @@ class ChatBox extends StatelessWidget {
             Container(
                 width: 300,
                 child: UsersCardWidget(
-                  isOnline: true,
+                  userModel: authProvider.userModel,
                 )),
             SizedBox(
               width: 100,
