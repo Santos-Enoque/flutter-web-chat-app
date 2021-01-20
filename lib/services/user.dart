@@ -10,11 +10,10 @@ class UserServices {
     String name,
     String photo,
   }) {
-    firebaseFirestore.collection(collection).doc(id).set({
-      "name": name,
-      "id": id,
-      "photo": photo,
-    });
+    firebaseFirestore
+        .collection(collection)
+        .doc(id)
+        .set({"name": name, "id": id, "photo": photo, "online": true});
   }
 
   Future<UserModel> getUserById(String id) =>

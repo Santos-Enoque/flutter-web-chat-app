@@ -57,7 +57,6 @@ class AuthProvider with ChangeNotifier {
       });
       return {'success': true, 'message': 'success'};
     } catch (e) {
-      notifyListeners();
       return {'success': false, 'message': e.toString()};
     }
   }
